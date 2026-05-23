@@ -1,6 +1,6 @@
 import { calculateTotal } from "../discountHelper";
 
-describe("calculateTotal Unit Test", () => {
+describe.only("calculateTotal Unit Test", () => {
   it("harus menghitung total harga setelah diskon dengan benar", () => {
     // 1. ARRANGE (Given: Siapkan input)
     const hargaAwal = 100000; // Harga awal sebelum diskon
@@ -9,6 +9,7 @@ describe("calculateTotal Unit Test", () => {
 
     // 2. ACT (When: Jalankan fungsinya)
     const hasilAktual = calculateTotal(hargaAwal, diskon);
+    console.log("Hasil Aktual:", hasilAktual); // Log hasil aktual untuk melihat outputnya
 
     // 3. ASSERT (Then: Cek hasilnya)
     expect(hasilAktual).toBe(ekspektasiHasil);
